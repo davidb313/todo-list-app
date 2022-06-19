@@ -1,0 +1,35 @@
+.tarea-contenedor{
+  width: 500px;
+  min-height: 60px;
+  background-color: #1b1b32;
+  margin: 5px 0;
+  padding: 8px 20px 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 7px;
+  border: 1px solid #d0d0d5;
+  cursor: pointer;
+  margin: 10px
+} 
+.tarea-texto{
+  width: 100%;
+  color: #d0d0d5;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.borrar-tarea-icono{
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  color: white;
+  
+}
+.tarea-contenedor-iconos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

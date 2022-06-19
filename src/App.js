@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Tarea from './Components/Tarea';
+import { useState } from 'react';
 
 function App() {
+  const [texto, setTexto] = useState('');
+  const [done, setDone] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-main-container'>
+      <h1>Free React Todo-List</h1>
+      <div className='todo-list-container'>
+        <h2>Mis tareas</h2>
+        <Tarea texto={texto} done={done} />
+      </div>
     </div>
   );
 }
