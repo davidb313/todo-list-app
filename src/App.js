@@ -1,17 +1,15 @@
-import './App.css';
-import Tarea from './Components/Tarea';
-import { useState } from 'react';
+import './styles/App.css';
+import ListaDeTareas from './Components/ListaDeTareas';
+import image from './assets/images/image.png';
 
 function App() {
-  const [texto, setTexto] = useState('');
-  const [done, setDone] = useState(false);
-
   return (
     <div className='app-main-container'>
-      <h1>Free React Todo-List</h1>
+      <img src={image} alt='img' />
+      <h1>React Todo-List</h1>
       <div className='todo-list-container'>
-        <h2>Mis tareas</h2>
-        <Tarea texto={texto} done={done} />
+        <h2>My To-do List</h2>
+        <ListaDeTareas />
       </div>
     </div>
   );
