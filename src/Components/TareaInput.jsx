@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/tarea-input.css';
 
-const TareaInput = ({ texto }) => {
+const TareaInput = (props) => {
+  const [input, setInput] = useState('');
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const manejarEnvio = {
+    const tareaNueva = {
       id: Math.random(),
-      texto: { texto },
+      texto: input,
+      completada: false,
     };
+    props.onSubmit(tareaNueva);
   };
 
   return (
-    <form className='tarea-formulario'>
+    <form className='tarea-formulario' onSubmit={handleSubmit}>
       <input
         className='tarea-input'
         type='text'
         placeholder='Type a task'
         name='texto'
+        onChange={handleChange}
       />
-      <button className='tarea-button' onClick={handleSubmit}>
-        Add Task
-      </button>
+      <button className='tarea-button'>Add Task</button>
     </form>
   );
 };
