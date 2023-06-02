@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import '../styles/tarea-input.css';
+import React, { useState } from "react";
+import "../styles/tarea-input.css";
 
 const TareaInput = (props) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -10,6 +10,7 @@ const TareaInput = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const tareaNueva = {
       id: Math.random(),
       texto: input,
@@ -27,7 +28,9 @@ const TareaInput = (props) => {
         name='texto'
         onChange={handleChange}
       />
-      <button className='tarea-button'>Add Task</button>
+      <button type='button' className='tarea-button' onClick={handleSubmit}>
+        Add Task
+      </button>
     </form>
   );
 };

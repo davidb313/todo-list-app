@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import TareaInput from './TareaInput';
-import Tarea from './Tarea';
-import '../styles/lista-de-tareas.css';
+import React, { useState } from "react";
+import TareaInput from "./TareaInput";
+import Tarea from "./Tarea";
+import "../styles/lista-de-tareas.css";
 
 const ListaDeTareas = () => {
   const [tareas, setTareas] = useState([]);
 
   const agregarTarea = (tarea) => {
     if (tarea.texto.trim()) {
-      console.log(tarea);
       tarea.texto = tarea.texto.trim();
       const tareasActualizadas = [tarea, ...tareas];
       setTareas(tareasActualizadas);
